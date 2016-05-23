@@ -16,6 +16,7 @@
       </head>
   <body>
 	  
+
 	  <!-- NAVBAR
 	      ================================================== -->
 	  <nav class="navbar navbar-default" role="navigation">
@@ -91,7 +92,7 @@
 		  <div class="container">
 			  <div class="row">
 				  <div class="col-md-offset-2 col-md-8">
-					 <h1> Todo es facilmente personalizable .</h1>
+					 <h1>Todo es facilmente personalizable.</h1>
 					 	    <p class="lead">Poderoso y f&aacute;cil de usar. iOS 9 fue diseñado para funcionar a la perfecci&oacute;n con las avanzadas tecnolog&iacute;as integradas en el iPhone.</p>
 					 	    <button type="button" class="app-store"></button>	
 				  </div>
@@ -257,5 +258,32 @@
     <script src="js/animatescroll.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/retina-1.1.0.min.js"></script>
+    
+    	  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="grafica.js"></script>
+    
+    
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Trabajo', 'Porciento'],
+          ['Inicio',     60],
+          ['Pantalla',     30],
+          ['Caracteristicas',  10]
+        ]);
+         var options = {
+          title: 'Porcentaje de avance en cada area',
+          is3D: true,};
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>	
+<div id="piechart" style="width:400px;height:300px;"></div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        
+  </body>
+
   	
 </html>
